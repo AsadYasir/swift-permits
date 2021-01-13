@@ -4,6 +4,7 @@ import theme from "./assets/themes/theme";
 import GlobalStyle from "./assets/themes/globalStyles";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <GlobalStyle />
       <Layout>
         <Navbar />
+        <HeroSection />
       </Layout>
     </ThemeProvider>
   );

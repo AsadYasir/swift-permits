@@ -36,6 +36,7 @@ const Container = styled.div`
 
 const Logo = styled.div`
   display: flex;
+  align-items: center;
 
   svg {
     margin-right: 38px;
@@ -43,6 +44,9 @@ const Logo = styled.div`
 
   h1 {
     font-family: ${(props) => props.theme.fonts.title};
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
   }
 `;
 
@@ -55,6 +59,7 @@ const NavLinks = styled.ul`
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
+    color: white;
     letter-spacing: 1px;
 
     &:not(:first-child) {
