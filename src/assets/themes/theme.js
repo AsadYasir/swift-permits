@@ -11,9 +11,10 @@ const theme = {
   },
 
   devices: {
+    sm_mobile: "(min-width: 350px)",
     mobile: "(min-width: 500px)",
     tablet: "(min-width: 800px)",
-    desktop: "(min-width: 1130px)",
+    desktop: "(min-width: 1160px)",
   },
 };
 

@@ -39,19 +39,32 @@ const Logo = styled.div`
   align-items: center;
 
   svg {
-    margin-right: 38px;
+    width: 30px;
+    margin-right: 18px;
   }
 
   h1 {
-    font-family: ${(props) => props.theme.fonts.title};
     color: white;
     text-transform: uppercase;
+    font-family: ${(props) => props.theme.fonts.title};
     font-weight: 300;
+    font-size: 24px;
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    h1 {
+      font-size: 32px;
+    }
+
+    svg {
+      width: 50px;
+      margin-right: 38px;
+    }
+  } ;
 `;
 
 const NavLinks = styled.ul`
-  display: flex;
+  display: none;
   align-items: center;
   list-style: none;
 
@@ -63,7 +76,20 @@ const NavLinks = styled.ul`
     letter-spacing: 1px;
 
     &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  @media ${(props) => props.theme.devices.desktop} {
+    li:not(:first-child) {
       margin-left: 100px;
+    }
+  }
+  @media ${(props) => props.theme.devices.tablet} {
+    display: flex;
+
+    li:not(:first-child) {
+      margin-left: 40px;
     }
   }
 `;

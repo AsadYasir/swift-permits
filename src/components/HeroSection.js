@@ -36,93 +36,145 @@ const Container = styled.section`
   align-items: flex-start;
 
   h1 {
-    font-size: 100px;
+    font-size: 50px;
     font-family: ${(props) => props.theme.fonts.title};
     font-weight: normal;
     color: white;
     line-height: 1em;
 
-    width: 740px;
+    max-width: 600px;
 
     margin-top: 90px;
     margin-bottom: 60px;
+
+    @media ${(props) => props.theme.devices.tablet} {
+      font-size: 100px;
+      font-family: ${(props) => props.theme.fonts.title};
+      font-weight: normal;
+      color: white;
+      line-height: 1em;
+
+      max-width: 740px;
+
+      margin-top: 90px;
+      margin-bottom: 60px;
+    }
   }
 `;
 
 const SceneImg = styled.img`
   position: absolute;
   top: 0;
-  left: 0px;
-  width: 100vw;
+  left: 0;
+  height: 110vh;
 
   z-index: -1;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    left: -200px;
+  } ;
 `;
 
 const AnimationsContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 550px;
+  /* height: 550px; */
 `;
 
-const revealRight = keyframes`
+const revealRight = (x) => keyframes`
   from {
     opacity: 0;
-    right: 0px;
+    right: ${x - 130}px;
   }
   to {
     opacity: 1;
-    right: 180px;
+    right: ${x}px;
   }
 `;
-const revealLeft = keyframes`
+const revealLeft = (x) => keyframes`
   from {
     opacity: 0;
-    right: 480px;
+    right: ${x + 130}px;
   }
   to {
     opacity: 1;
-    right: 350px;
+    right: ${x}px;
   }
 `;
 
 const DeliverMan = styled.img`
   position: absolute;
-  right: 350px;
-  top: -185px;
-  width: 200px;
+  display: none;
 
-  animation: ${revealLeft} 1.5s ease;
-  animation-fill-mode: forwards;
+  @media ${(props) => props.theme.devices.tablet} {
+    display: block;
+    top: -85px;
+
+    animation: ${revealLeft(230)} 1.5s ease;
+    animation-fill-mode: forwards;
+  }
+
+  @media ${(props) => props.theme.devices.desktop} {
+    display: block;
+    top: -335px;
+
+    animation: ${revealLeft(200)} 1.5s ease;
+    animation-fill-mode: forwards;
+  }
 `;
 
 const DeliverGirl = styled.img`
   position: absolute;
-  top: -185px;
-  width: 200px;
+  display: none;
 
-  animation: ${revealRight} 1.5s ease;
-  animation-fill-mode: forwards;
+  @media ${(props) => props.theme.devices.tablet} {
+    display: block;
+    top: -85px;
+
+    animation: ${revealRight(0)} 1.5s ease;
+    animation-fill-mode: forwards;
+  }
+
+  @media ${(props) => props.theme.devices.desktop} {
+    display: block;
+    top: -335px;
+
+    animation: ${revealRight(50)} 1.5s ease;
+    animation-fill-mode: forwards;
+  }
 `;
 
-const motorBounce = keyframes`
+const motorBounce = (y) => keyframes`
   0%, 100% {
-  top: 100px;
+    top: ${y}vh;
   }
   50% {
-  top: 105px;
+    top: calc(${y}vh + 5px);
   }
 `;
 
 const DeliverTruckUpper = styled.img`
   position: absolute;
-  left: -400px;
-  top: 100px;
+  left: -60px;
+  width: 400px;
 
-  animation: ${motorBounce} 1s ease-out infinite;
+  animation: ${motorBounce(10)} 1s ease-out infinite;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    left: -400px;
+    width: 800px;
+  }
 `;
 
 const DeliverTruckLower = styled.img`
   position: absolute;
-  left: -400px;
-  top: 300px;
+  left: -73px;
+  top: calc(10vh + 100px);
+  width: 400px;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    left: -430px;
+    width: 800px;
+    top: calc(10vh + 200px);
+  }
 `;
