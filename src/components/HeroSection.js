@@ -66,7 +66,7 @@ const SceneImg = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  height: 110vh;
+  height: 120vh;
 
   z-index: -1;
 
@@ -78,7 +78,6 @@ const SceneImg = styled.img`
 const AnimationsContainer = styled.div`
   position: relative;
   width: 100%;
-  /* height: 550px; */
 `;
 
 const revealRight = (x) => keyframes`
