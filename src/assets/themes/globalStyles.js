@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.fonts.text};
     color: ${(props) => props.theme.colors.text};
   }
+  
 `;
 
 export default GlobalStyle;

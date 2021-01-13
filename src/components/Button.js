@@ -8,7 +8,6 @@ const bounce = keyframes`
   50% {
     right: 25px;
   }
-
 `;
 
 export const Button = styled.button`
