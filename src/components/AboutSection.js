@@ -32,7 +32,12 @@ const Container = styled.section`
   min-height: 100px;
 
   margin-top: 350px;
-  margin-bottom: 600px;
+  margin-bottom: 100px;
+
+  img {
+    max-width: 100%;
+    align-self: center;
+  }
 
   @media ${(props) => props.theme.devices.tablet} {
     margin-top: 550px;
