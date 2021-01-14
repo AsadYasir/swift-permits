@@ -6,15 +6,18 @@ import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import { useRef } from "react";
 
 function App() {
+  const aboutRef = useRef(null);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout>
-        <Navbar />
+        <Navbar aboutRef={aboutRef} />
         <HeroSection />
-        <AboutSection />
+        <AboutSection aboutRef={aboutRef} />
       </Layout>
     </ThemeProvider>
   );

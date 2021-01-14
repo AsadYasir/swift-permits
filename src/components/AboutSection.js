@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import Img from "../assets/images/AboutUs.svg";
 
-function AboutSection() {
+function AboutSection({ aboutRef }) {
   return (
-    <Container>
+    <Container ref={aboutRef}>
       <Content>
         <h1>About us</h1>
         <p>
@@ -32,6 +32,7 @@ const Container = styled.section`
   min-height: 100px;
 
   margin-top: 350px;
+  margin-bottom: 600px;
 
   @media ${(props) => props.theme.devices.tablet} {
     margin-top: 550px;

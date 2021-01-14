@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as LogoIcon } from "../assets/images/Logo.svg";
 import { Button } from "./Button";
 
-function Navbar() {
+function Navbar({ aboutRef }) {
   return (
     <Container>
       <Logo>
@@ -13,15 +13,15 @@ function Navbar() {
       </Logo>
 
       <NavLinks>
-        <li>
-          <a href="#">About</a>
+        <li
+          onClick={() => {
+            aboutRef.current.scrollIntoView();
+          }}
+        >
+          About
         </li>
-        <li>
-          <a href="#">How to</a>
-        </li>
-        <li>
-          <a href="#">FAQ</a>
-        </li>
+        <li>How to</li>
+        <li>FAQ</li>
         <li>
           <Button>Contact Us</Button>
         </li>
@@ -74,7 +74,7 @@ const NavLinks = styled.ul`
   align-items: center;
   list-style: none;
 
-  li a {
+  li {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 16px;
@@ -82,6 +82,7 @@ const NavLinks = styled.ul`
     color: white;
     letter-spacing: 1px;
 
+    cursor: pointer;
     position: relative;
 
     &:not(:first-child) {
