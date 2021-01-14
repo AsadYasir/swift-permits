@@ -9,20 +9,23 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ApplySection from "./components/ApplySection";
+import FAQSection from "./components/FAQSection";
 
 function App() {
   const aboutRef = useRef(null);
   const applyRef = useRef(null);
+  const faqRef = useRef(null);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout>
-        <Navbar aboutRef={aboutRef} applyRef={applyRef} />
+        <Navbar aboutRef={aboutRef} applyRef={applyRef} faqRef={faqRef} />
         <HeroSection />
 
         <AboutSection aboutRef={aboutRef} />
         <ApplySection applyRef={applyRef} />
+        <FAQSection faqRef={faqRef} />
       </Layout>
     </ThemeProvider>
   );

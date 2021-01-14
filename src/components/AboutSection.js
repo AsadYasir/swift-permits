@@ -40,7 +40,8 @@ const Container = styled.section`
   }
 
   @media ${(props) => props.theme.devices.tablet} {
-    margin-top: 550px;
+    margin-top: 350px;
+    padding-top: 200px;
   }
 `;
 

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as LogoIcon } from "../assets/images/Logo.svg";
 import { Button } from "./Button";
 
-function Navbar({ aboutRef, applyRef }) {
+function Navbar({ aboutRef, applyRef, faqRef }) {
   return (
     <Container>
       <Logo>
@@ -29,7 +29,14 @@ function Navbar({ aboutRef, applyRef }) {
         >
           How to
         </li>
-        <li className="nav-item">FAQ</li>
+        <li
+          className="nav-item"
+          onClick={() => {
+            faqRef.current.scrollIntoView();
+          }}
+        >
+          FAQ
+        </li>
         <li>
           <Button>Contact Us</Button>
         </li>
