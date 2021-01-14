@@ -5,6 +5,7 @@ import GlobalStyle from "./assets/themes/globalStyles";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Layout>
         <Navbar />
         <HeroSection />
+        <AboutSection />
       </Layout>
     </ThemeProvider>
   );

@@ -17,7 +17,7 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.colors.bg};
 
   z-index: 1;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`

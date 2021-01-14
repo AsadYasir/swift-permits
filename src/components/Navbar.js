@@ -13,9 +13,15 @@ function Navbar() {
       </Logo>
 
       <NavLinks>
-        <li>About</li>
-        <li>How to</li>
-        <li>FAQ</li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">How to</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
         <li>
           <Button>Contact Us</Button>
         </li>
@@ -68,15 +74,35 @@ const NavLinks = styled.ul`
   align-items: center;
   list-style: none;
 
-  li {
+  li a {
     text-transform: uppercase;
+    text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     color: white;
     letter-spacing: 1px;
 
+    position: relative;
+
     &:not(:first-child) {
       margin-left: 30px;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: ${(props) => props.theme.colors.red};
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      bottom: -10px;
     }
   }
 
