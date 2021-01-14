@@ -14,6 +14,7 @@ function Navbar({ aboutRef, applyRef }) {
 
       <NavLinks>
         <li
+          className="nav-item"
           onClick={() => {
             aboutRef.current.scrollIntoView();
           }}
@@ -21,13 +22,14 @@ function Navbar({ aboutRef, applyRef }) {
           About
         </li>
         <li
+          className="nav-item"
           onClick={() => {
             applyRef.current.scrollIntoView();
           }}
         >
           How to
         </li>
-        <li>FAQ</li>
+        <li className="nav-item">FAQ</li>
         <li>
           <Button>Contact Us</Button>
         </li>
@@ -95,7 +97,7 @@ const NavLinks = styled.ul`
       margin-left: 30px;
     }
 
-    &::after {
+    &.nav-item::after {
       position: absolute;
       bottom: -5px;
       left: 0;
@@ -107,15 +109,9 @@ const NavLinks = styled.ul`
       transition: 0.4s;
     }
 
-    &:hover::after {
+    &.nav-item:hover::after {
       opacity: 1;
       bottom: -10px;
-    }
-  }
-
-  @media ${(props) => props.theme.devices.desktop} {
-    li:not(:first-child) {
-      margin-left: 100px;
     }
   }
   @media ${(props) => props.theme.devices.tablet} {
@@ -123,6 +119,12 @@ const NavLinks = styled.ul`
 
     li:not(:first-child) {
       margin-left: 40px;
+    }
+  }
+
+  @media ${(props) => props.theme.devices.desktop} {
+    li:not(:first-child) {
+      margin-left: 100px;
     }
   }
 `;
