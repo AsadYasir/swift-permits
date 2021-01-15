@@ -9,7 +9,7 @@ function FAQDropdown({ question, children }) {
       <QuestionWrapper>
         <h1>{question}</h1>
         <svg
-          className={showDropdown && "open"}
+          className={showDropdown ? "open" : undefined}
           width="20"
           height="21"
           viewBox="0 0 20 21"
@@ -35,7 +35,7 @@ function FAQDropdown({ question, children }) {
           />
         </svg>
       </QuestionWrapper>
-      <AnswerWrapper className={showDropdown && "open"}>
+      <AnswerWrapper className={showDropdown ? "open" : undefined}>
         <p>{children}</p>
       </AnswerWrapper>
     </Container>
@@ -55,6 +55,7 @@ const Container = styled.div`
 
 const QuestionWrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 25px;
   background-color: white;
@@ -68,6 +69,8 @@ const QuestionWrapper = styled.div`
   }
 
   svg {
+    flex-shrink: 0;
+    margin-left: 10px;
     transform: rotateZ(0deg);
     transition: transform 400ms ease-out;
 

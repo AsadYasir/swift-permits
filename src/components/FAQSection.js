@@ -21,48 +21,74 @@ function FAQSection({ faqRef }) {
             Traffic permits are a requirement for conducting professional
             traffic.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            Traffic permits are a requirement for conducting professional
-            traffic. Traffic permits are a requirement for conducting
-            professional traffic. Traffic permits are a requirement for
-            conducting professional traffic. Traffic permits are a requirement
-            for conducting professional traffic. Traffic permits are a
-            requirement for conducting professional traffic. Traffic permits are
-            a requirement for conducting professional traffic. Traffic permits
-            are a requirement for conducting professional traffic. Traffic
-            permits are a requirement for conducting professional traffic.
-            Traffic permits are a requirement for conducting professional
-            traffic. Traffic permits are a requirement for conducting
-            professional traffic.
+          <FAQDropdown question={"How to check the traffic condition?"}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa. Suspendisse
+            imperdiet massa sit amet metus rutrum, a feugiat diam convallis.
+            Vestibulum tellus nibh, lacinia sit amet magna id, interdum rutrum
+            massa. Integer ut lorem libero.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            Traffic permits are a requirement for conducting professional
-            traffic.
+          <FAQDropdown
+            question={
+              "What are the requirements for a professional traffic permit?"
+            }
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa. Suspendisse
+            imperdiet massa sit amet metus rutrum, a feugiat diam convallis.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            Traffic permits are a requirement for conducting professional
-            traffic.
+          <FAQDropdown
+            question={
+              "Are there professional traffic permit training courses at a distance?"
+            }
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa. Suspendisse
+            imperdiet massa sit amet metus rutrum, a feugiat diam convallis.
+            Vestibulum tellus nibh, lacinia sit amet magna id, interdum rutrum
+            massa. Integer ut lorem libero.
           </FAQDropdown>
         </Column>
 
         <Column>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
+          <FAQDropdown
+            question={"When is a professional traffic permit needed?"}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa. Suspendisse
+            imperdiet massa sit amet metus rutrum, a feugiat diam convallis.
+            Vestibulum tellus nibh, lacinia sit amet magna id, interdum rutrum
+            massa. Integer ut lorem libero.
+          </FAQDropdown>
+          <FAQDropdown question={"Where to look for a traffic permit?"}>
             Traffic permits are a requirement for conducting professional
             traffic.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            Traffic permits are a requirement for conducting professional
-            traffic.
+          <FAQDropdown
+            question={
+              "Are there differences between a traffic permit and a professional traffic permit?"
+            }
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa. Suspendisse
+            imperdiet massa sit amet metus rutrum, a feugiat diam convallis.
+            Vestibulum tellus nibh, lacinia sit amet magna id, interdum rutrum
+            massa. Integer ut lorem libero. Donec eget consequat ante. Praesent
+            sed cursus lorem. Fusce iaculis urna a mattis laoreet. Maecenas ut
+            cursus nibh. Maecenas a erat nibh. Proin tincidunt vel tortor sed
+            scelerisque. Maecenas finibus vitae elit in porttitor.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            <p>
-              Traffic permits are a requirement for conducting professional
-              traffic.
-            </p>
+          <FAQDropdown
+            question={
+              "How much does a commercial traffic permit cost for goods?"
+            }
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa.
           </FAQDropdown>
-          <FAQDropdown question={"What is a professional traffic permit?"}>
-            Traffic permits are a requirement for conducting professional
-            traffic.
+          <FAQDropdown question={"How to plug in for the traffic permit test?"}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+            amet ultrices felis. Pellentesque id imperdiet massa.
           </FAQDropdown>
         </Column>
       </Content>
@@ -82,7 +108,7 @@ const Container = styled.section`
   padding-right: 60px;
 
   position: relative;
-  padding-bottom: 400px;
+  padding-bottom: 200px;
 `;
 
 const ContentHeader = styled.div`
@@ -93,7 +119,7 @@ const ContentHeader = styled.div`
     color: ${(props) => props.theme.colors.red};
     text-transform: uppercase;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
 
     margin: 65px 0;
   }
@@ -115,8 +141,13 @@ const ContentHeader = styled.div`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: 1fr;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  } ;
 `;
 
 const Column = styled.div`
@@ -133,6 +164,6 @@ const Background = styled.div`
   border-top-left-radius: 150px;
 
   width: 1000px;
-  height: 600px;
+  height: 100%;
   background-color: ${(props) => props.theme.colors.rose};
 `;
