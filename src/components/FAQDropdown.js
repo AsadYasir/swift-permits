@@ -60,7 +60,7 @@ const QuestionWrapper = styled.div`
   padding: 25px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(238, 77, 71, 0.15) 0px 48px 100px 0px;
   z-index: 5;
 
   h1 {
@@ -95,7 +95,7 @@ const QuestionWrapper = styled.div`
 const AnswerWrapper = styled.div`
   display: flex;
   width: 100%;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(238, 77, 71, 0.15) 0px 48px 100px 0px;
   border-radius: 10px;
   background-color: #fff7f5;
 

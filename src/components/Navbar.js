@@ -68,7 +68,7 @@ const Logo = styled.div`
     color: white;
     text-transform: uppercase;
     font-family: ${(props) => props.theme.fonts.title};
-    font-weight: 300;
+    font-weight: 600;
     font-size: 24px;
   }
 

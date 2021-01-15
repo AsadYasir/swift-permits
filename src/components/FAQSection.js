@@ -108,7 +108,7 @@ const Container = styled.section`
   padding-right: 60px;
 
   position: relative;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 `;
 
 const ContentHeader = styled.div`
@@ -119,7 +119,7 @@ const ContentHeader = styled.div`
     color: ${(props) => props.theme.colors.red};
     text-transform: uppercase;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
 
     margin: 65px 0;
   }

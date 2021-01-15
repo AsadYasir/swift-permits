@@ -10,6 +10,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ApplySection from "./components/ApplySection";
 import FAQSection from "./components/FAQSection";
+import PartnersSection from "./components/PartnersSection";
 
 function App() {
   const aboutRef = useRef(null);
@@ -26,6 +27,7 @@ function App() {
         <AboutSection aboutRef={aboutRef} />
         <ApplySection applyRef={applyRef} />
         <FAQSection faqRef={faqRef} />
+        <PartnersSection />
       </Layout>
     </ThemeProvider>
   );
