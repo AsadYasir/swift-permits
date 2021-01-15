@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Img from "../assets/images/ThinkingMan.svg";
+import FAQDropdown from "./FAQDropdown";
 
 function FAQSection({ faqRef }) {
   return (
@@ -13,6 +14,58 @@ function FAQSection({ faqRef }) {
         </div>
         <img src={Img} alt="Thinking man" />
       </ContentHeader>
+
+      <Content>
+        <Column>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic. Traffic permits are a requirement for conducting
+            professional traffic. Traffic permits are a requirement for
+            conducting professional traffic. Traffic permits are a requirement
+            for conducting professional traffic. Traffic permits are a
+            requirement for conducting professional traffic. Traffic permits are
+            a requirement for conducting professional traffic. Traffic permits
+            are a requirement for conducting professional traffic. Traffic
+            permits are a requirement for conducting professional traffic.
+            Traffic permits are a requirement for conducting professional
+            traffic. Traffic permits are a requirement for conducting
+            professional traffic.
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+        </Column>
+
+        <Column>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            <p>
+              Traffic permits are a requirement for conducting professional
+              traffic.
+            </p>
+          </FAQDropdown>
+          <FAQDropdown question={"What is a professional traffic permit?"}>
+            Traffic permits are a requirement for conducting professional
+            traffic.
+          </FAQDropdown>
+        </Column>
+      </Content>
 
       <Background />
     </Container>
@@ -29,6 +82,7 @@ const Container = styled.section`
   padding-right: 60px;
 
   position: relative;
+  padding-bottom: 400px;
 `;
 
 const ContentHeader = styled.div`
@@ -57,6 +111,17 @@ const ContentHeader = styled.div`
   img {
     max-width: 100%;
   }
+`;
+
+const Content = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Background = styled.div`
