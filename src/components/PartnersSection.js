@@ -10,9 +10,56 @@ function PartnersSection() {
       </Header>
 
       <CardSlider>
-        <Card first></Card>
-        <Card second></Card>
-        <Card third></Card>
+        <Card first>
+          <p>
+            Yes, you will need to have the land owner sign the permit
+            application as the Permittee, and you sign the permit as the
+            Applicant or Agent for the Permittee.
+          </p>
+          <div className="author">
+            <div
+              className="author-img"
+              style={{
+                backgroundImage:
+                  "url(https://randomuser.me/api/portraits/lego/0.jpg)",
+              }}
+            ></div>
+            <span>Isak Petersson</span>
+          </div>
+        </Card>
+        <Card second>
+          <p>
+            From most barricade or traffic control companies located in the
+            phone book. They employ certified Traffic Control Supervisors (TCS)
+            who can generate and certify the traffic control plan.
+          </p>
+          <div className="author">
+            <div
+              className="author-img"
+              style={{
+                backgroundImage:
+                  "url(https://randomuser.me/api/portraits/lego/5.jpg)",
+              }}
+            ></div>
+            <span>Simon Sandberg</span>
+          </div>
+        </Card>
+        <Card third>
+          <p>
+            An A-Line, or access restriction deed is a property right that has
+            been obtained by CDOT for the sole purpose of prohibiting direct
+          </p>
+          <div className="author">
+            <div
+              className="author-img"
+              style={{
+                backgroundImage:
+                  "url(https://randomuser.me/api/portraits/lego/7.jpg)",
+              }}
+            ></div>
+            <span>Joe Doe</span>
+          </div>
+        </Card>
       </CardSlider>
     </Container>
   );
@@ -63,13 +110,37 @@ const CardSlider = styled.div`
 `;
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: white;
-  box-shadow: rgba(238, 77, 71, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(238, 77, 71, 0.15) 0px 10px 10px 0px;
   border-radius: 10px;
   margin-left: 15px;
+  padding: 60px 48px 40px;
 
   height: 360px;
   width: 420px;
 
   opacity: ${(props) => (props.first ? 1 : props.second ? 0.5 : 0.3)};
+
+  .author {
+    display: flex;
+    align-items: center;
+
+    .author-img {
+      border-radius: 50%;
+      background-color: grey;
+      background-position: center;
+      background-size: cover;
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
 `;
