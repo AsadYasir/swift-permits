@@ -26,13 +26,18 @@ function ApplySection({ applyRef }) {
 export default ApplySection;
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: 3fr 2fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 
   img {
-    max-width: 100%;
+    max-width: min(100%, 500px);
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  } ;
 `;
 
 const Content = styled.div`
@@ -44,8 +49,7 @@ const Content = styled.div`
     text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
-
-    margin: 65px 0;
+    margin: 0 0 65px;
   }
 
   p {
@@ -56,4 +60,10 @@ const Content = styled.div`
 
     margin-bottom: 65px;
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    h1 {
+      margin: 65px 0;
+    }
+  } ;
 `;

@@ -103,17 +103,19 @@ export default FAQSection;
 const Container = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-top: 80px;
-  padding-right: 60px;
 
   position: relative;
   padding-bottom: 100px;
 `;
 
 const ContentHeader = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  max-width: 470px;
 
   h1 {
     color: ${(props) => props.theme.colors.red};
@@ -125,18 +127,33 @@ const ContentHeader = styled.div`
   }
 
   p {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 400;
     font-family: ${(props) => props.theme.fonts.title};
-    max-width: 550px;
     line-height: 1.5em;
 
     margin-bottom: 65px;
   }
 
   img {
-    max-width: 100%;
+    max-width: min(100%, 400px);
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 100%;
+
+    p {
+      font-size: 48px;
+      max-width: 550px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  } ;
 `;
 
 const Content = styled.div`

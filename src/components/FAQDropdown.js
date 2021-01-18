@@ -47,10 +47,15 @@ export default FAQDropdown;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 470px;
 
   position: relative;
   margin-bottom: 10px;
   cursor: pointer;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    max-width: 100%;
+  }
 `;
 
 const QuestionWrapper = styled.div`

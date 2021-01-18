@@ -26,28 +26,35 @@ function AboutSection({ aboutRef }) {
 export default AboutSection;
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
   width: 100%;
-  min-height: 100px;
 
   margin-top: 350px;
   margin-bottom: 100px;
 
   img {
-    max-width: 100%;
-    align-self: center;
+    max-width: min(100%, 400px);
   }
 
   @media ${(props) => props.theme.devices.tablet} {
     margin-top: 350px;
     padding-top: 200px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 470px;
 
   h1 {
     color: ${(props) => props.theme.colors.red};
@@ -55,16 +62,22 @@ const Content = styled.div`
     font-size: 24px;
     font-weight: bold;
 
-    margin: 65px 0;
+    margin: 20px 0 65px;
   }
 
   p {
     font-size: 18px;
     font-weight: 300;
-    max-width: 470px;
+    width: 100%;
     line-height: 1.5em;
 
     margin-bottom: 65px;
+  }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    h1 {
+      margin: 65px 0;
+    }
   }
 `;
 

@@ -68,17 +68,23 @@ function PartnersSection() {
 export default PartnersSection;
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: 300px auto;
-  width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 800px;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    display: grid;
+    grid-template-columns: 300px auto;
+    width: 100%;
+  }
 `;
 
 const Header = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: min(470px, 100%);
 
   h1 {
     color: ${(props) => props.theme.colors.red};
@@ -90,7 +96,7 @@ const Header = styled.div`
   }
 
   p {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 400;
     font-family: ${(props) => props.theme.fonts.title};
     max-width: 550px;
@@ -98,35 +104,47 @@ const Header = styled.div`
 
     margin-bottom: 65px;
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    p {
+      font-size: 48px;
+    }
+  } ;
 `;
 
 const CardSlider = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 0 40px;
+  padding: 0;
 
   position: relative;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    padding: 0 40px;
+  }
 `;
 
 const Card = styled.div`
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
+
   background-color: white;
   box-shadow: rgba(238, 77, 71, 0.15) 0px 10px 10px 0px;
   border-radius: 10px;
+
   margin-left: 15px;
   padding: 60px 48px 40px;
-
-  height: 360px;
-  width: 420px;
+  width: 50vw !important;
 
   opacity: ${(props) => (props.first ? 1 : props.second ? 0.5 : 0.3)};
 
   .author {
     display: flex;
     align-items: center;
+    margin-top: 20px;
 
     .author-img {
       border-radius: 50%;
@@ -143,4 +161,8 @@ const Card = styled.div`
       font-weight: bold;
     }
   }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    width: 400px;
+  } ;
 `;

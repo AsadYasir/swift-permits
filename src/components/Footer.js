@@ -31,8 +31,8 @@ export default Footer;
 
 const Container = styled.footer`
   display: flex;
+  flex-direction: column;
   width: 100%;
-  /* min-height: 100px; */
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.bg};
@@ -44,7 +44,20 @@ const Container = styled.footer`
 
   .social-icons {
     display: flex;
+    margin-top: 12px;
+
+    > div:not(:first-child) {
+      margin-left: 20px;
+    }
   }
+
+  @media ${(props) => props.theme.devices.mobile} {
+    flex-direction: row;
+
+    .social-icons {
+      margin: 0;
+    }
+  } ;
 `;
 
 const SocialIconWrapper = styled.div`
@@ -56,7 +69,6 @@ const SocialIconWrapper = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.red};
 
-  margin-left: 12px;
   transition: 0.3s;
 
   &:hover {
