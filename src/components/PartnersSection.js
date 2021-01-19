@@ -135,9 +135,9 @@ const Card = styled.div`
   box-shadow: rgba(238, 77, 71, 0.15) 0px 10px 10px 0px;
   border-radius: 10px;
 
-  margin-left: 15px;
+  margin-right: 15px;
   padding: 60px 48px 40px;
-  width: 50vw !important;
+  max-width: min(400px, calc(100vw - 50px));
 
   opacity: ${(props) => (props.first ? 1 : props.second ? 0.5 : 0.3)};
 
@@ -163,6 +163,6 @@ const Card = styled.div`
   }
 
   @media ${(props) => props.theme.devices.tablet} {
-    width: 400px;
+    max-width: 400px;
   } ;
 `;
