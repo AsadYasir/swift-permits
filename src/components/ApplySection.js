@@ -29,6 +29,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 120px;
 
   img {
     max-width: min(100%, 500px);
@@ -37,7 +38,7 @@ const Container = styled.section`
   @media ${(props) => props.theme.devices.tablet} {
     display: grid;
     grid-template-columns: 3fr 2fr;
-  } ;
+  }
 `;
 
 const Content = styled.div`

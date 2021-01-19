@@ -94,12 +94,23 @@ const NavLinks = styled.ul`
       opacity: 1;
       bottom: -10px;
     }
+
+    &:last-child {
+      display: none;
+    }
   }
-  @media ${(props) => props.theme.devices.tablet} {
+  @media ${(props) => props.theme.devices.mobile} {
     display: flex;
 
     li:not(:first-child) {
-      margin-left: 40px;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    li:last-child {
+      display: flex;
     }
   }
 

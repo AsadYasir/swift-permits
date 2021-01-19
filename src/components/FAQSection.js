@@ -105,10 +105,12 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 80px;
+
+  margin-top: 120px;
+  padding-top: 65px;
+  padding-bottom: 50px;
 
   position: relative;
-  padding-bottom: 100px;
 `;
 
 const ContentHeader = styled.div`
@@ -176,7 +178,7 @@ const Background = styled.div`
   position: absolute;
   z-index: -1;
   left: 30%;
-  top: -100px;
+  top: 0px;
 
   border-top-left-radius: 150px;
 

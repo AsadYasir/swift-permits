@@ -32,15 +32,14 @@ const Container = styled.section`
   width: 100%;
 
   margin-top: 350px;
-  margin-bottom: 100px;
 
   img {
     max-width: min(100%, 400px);
   }
 
   @media ${(props) => props.theme.devices.tablet} {
-    margin-top: 350px;
-    padding-top: 200px;
+    margin-top: 485px;
+    padding-top: 65px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;

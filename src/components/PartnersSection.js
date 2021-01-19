@@ -72,6 +72,8 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   margin-bottom: 150px;
+  margin-top: 120px;
+  padding-top: 65px;
 
   @media ${(props) => props.theme.devices.tablet} {
     display: grid;
