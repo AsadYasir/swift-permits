@@ -5,14 +5,20 @@ import { ReactComponent as LogoIcon } from "../assets/images/Logo.svg";
 
 function Logo() {
   return (
-    <Container>
-      <LogoIcon />
-      <h1>Traffico</h1>
-    </Container>
+    <LinkWrapper href="/">
+      <Container>
+        <LogoIcon />
+        <h1>Traffico</h1>
+      </Container>
+    </LinkWrapper>
   );
 }
 
 export default Logo;
+
+const LinkWrapper = styled.a`
+  text-decoration: none;
+`;
 
 const Container = styled.div`
   display: flex;
