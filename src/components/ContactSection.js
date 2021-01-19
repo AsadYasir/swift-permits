@@ -4,6 +4,7 @@ import styled from "styled-components";
 import SmallerTruckImg from "../assets/images/smaller-truck.svg";
 import DetailLineImg from "../assets/images/detail-line.svg";
 import { Button } from "./Button";
+import Logo from "./Logo";
 
 function ContactSection() {
   return (
@@ -23,6 +24,15 @@ function ContactSection() {
         </Form>
       </MainContent>
 
+      <Navigation>
+        <Logo />
+        <NavItems>
+          <NavItem>About</NavItem>
+          <NavItem>How To</NavItem>
+          <NavItem>FAQ</NavItem>
+        </NavItems>
+      </Navigation>
+
       <Background />
       <SmallerTruck src={SmallerTruckImg} />
       <DetailLine src={DetailLineImg} />
@@ -34,7 +44,6 @@ export default ContactSection;
 
 const Container = styled.section`
   width: 100%;
-  min-height: 800px;
   position: relative;
 `;
 
@@ -121,6 +130,41 @@ const Label = styled.label`
   margin-bottom: 18px;
 `;
 
+const Navigation = styled.nav`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  @media ${(props) => props.theme.devices.mobile} {
+    flex-direction: row;
+  }
+`;
+
+const NavItems = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 20px;
+
+  & li:not(:first-child) {
+    margin-left: 30px;
+  }
+
+  @media ${(props) => props.theme.devices.mobile} {
+    margin-top: 0;
+  }
+`;
+
+const NavItem = styled.li`
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+`;
+
 const Background = styled.div`
   position: absolute;
   top: 100px;
@@ -132,7 +176,7 @@ const Background = styled.div`
   z-index: -1;
 
   @media ${(props) => props.theme.devices.desktop} {
-    right: 0;
+    right: -30px;
     border-top-right-radius: 100px;
   }
 `;

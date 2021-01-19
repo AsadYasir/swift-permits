@@ -39,7 +39,7 @@ const Container = styled.footer`
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) => props.theme.colors.bg};
-  padding: 50px 0;
+  padding: 40px 0;
 
   span {
     font-weight: 300;
@@ -70,7 +70,7 @@ const Container = styled.footer`
     .social-icons {
       margin: 0;
     }
-  } ;
+  }
 `;
 
 const SocialIconWrapper = styled.div`
@@ -79,6 +79,7 @@ const SocialIconWrapper = styled.div`
   height: 40px;
   width: 40px;
   padding: 10px;
+  margin-top: 20px;
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.red};
 
@@ -86,6 +87,10 @@ const SocialIconWrapper = styled.div`
 
   &:hover {
     transform: scale(1.4);
+  }
+
+  @media ${(props) => props.theme.devices.mobile} {
+    margin-top: 0px;
   }
 `;
 
