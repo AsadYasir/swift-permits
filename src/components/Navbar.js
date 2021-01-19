@@ -99,6 +99,7 @@ const NavLinks = styled.ul`
       display: none;
     }
   }
+  
   @media ${(props) => props.theme.devices.mobile} {
     display: flex;
 

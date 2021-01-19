@@ -66,5 +66,5 @@ const Content = styled.div`
     h1 {
       margin: 65px 0;
     }
-  } ;
+  }
 `;

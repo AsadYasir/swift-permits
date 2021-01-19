@@ -4,63 +4,67 @@ import styled from "styled-components";
 function PartnersSection() {
   return (
     <Container>
-      <Header>
-        <h1>Partners</h1>
-        <p>Our Awesome Clients</p>
-      </Header>
+      <Wrapper>
+        <Header>
+          <h1>Partners</h1>
+          <p>Our Awesome Clients</p>
+        </Header>
+      </Wrapper>
 
-      <CardSlider>
-        <Card first>
-          <p>
-            Yes, you will need to have the land owner sign the permit
-            application as the Permittee, and you sign the permit as the
-            Applicant or Agent for the Permittee.
-          </p>
-          <div className="author">
-            <div
-              className="author-img"
-              style={{
-                backgroundImage:
-                  "url(https://randomuser.me/api/portraits/lego/0.jpg)",
-              }}
-            ></div>
-            <span>Isak Petersson</span>
-          </div>
-        </Card>
-        <Card second>
-          <p>
-            From most barricade or traffic control companies located in the
-            phone book. They employ certified Traffic Control Supervisors (TCS)
-            who can generate and certify the traffic control plan.
-          </p>
-          <div className="author">
-            <div
-              className="author-img"
-              style={{
-                backgroundImage:
-                  "url(https://randomuser.me/api/portraits/lego/5.jpg)",
-              }}
-            ></div>
-            <span>Simon Sandberg</span>
-          </div>
-        </Card>
-        <Card third>
-          <p>
-            An A-Line, or access restriction deed is a property right that has
-            been obtained by CDOT for the sole purpose of prohibiting direct
-          </p>
-          <div className="author">
-            <div
-              className="author-img"
-              style={{
-                backgroundImage:
-                  "url(https://randomuser.me/api/portraits/lego/7.jpg)",
-              }}
-            ></div>
-            <span>Joe Doe</span>
-          </div>
-        </Card>
-      </CardSlider>
+      <Wrapper>
+        <CardSlider>
+          <Card first>
+            <p>
+              Yes, you will need to have the land owner sign the permit
+              application as the Permittee, and you sign the permit as the
+              Applicant or Agent for the Permittee.
+            </p>
+            <div className="author">
+              <div
+                className="author-img"
+                style={{
+                  backgroundImage:
+                    "url(https://randomuser.me/api/portraits/lego/0.jpg)",
+                }}
+              ></div>
+              <span>Isak Petersson</span>
+            </div>
+          </Card>
+          <Card second>
+            <p>
+              From most barricade or traffic control companies located in the
+              phone book. They employ certified Traffic Control Supervisors
+              (TCS) who can generate and certify the traffic control plan.
+            </p>
+            <div className="author">
+              <div
+                className="author-img"
+                style={{
+                  backgroundImage:
+                    "url(https://randomuser.me/api/portraits/lego/5.jpg)",
+                }}
+              ></div>
+              <span>Simon Sandberg</span>
+            </div>
+          </Card>
+          <Card third>
+            <p>
+              An A-Line, or access restriction deed is a property right that has
+              been obtained by CDOT for the sole purpose of prohibiting direct
+            </p>
+            <div className="author">
+              <div
+                className="author-img"
+                style={{
+                  backgroundImage:
+                    "url(https://randomuser.me/api/portraits/lego/7.jpg)",
+                }}
+              ></div>
+              <span>Joe Doe</span>
+            </div>
+          </Card>
+        </CardSlider>
+      </Wrapper>
     </Container>
   );
 }
@@ -71,14 +75,27 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 150px;
-  margin-top: 120px;
-  padding-top: 65px;
+  margin-bottom: 300px;
+  margin-top: 185px;
+  padding-bottom: 65px;
 
   @media ${(props) => props.theme.devices.tablet} {
     display: grid;
     grid-template-columns: 300px auto;
     width: 100%;
+    margin-bottom: 150px;
+  }
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  height: 200px;
+  width: min(100%, 470px);
+
+  display: flex;
+
+  @media ${(props) => props.theme.devices.tablet} {
+    height: 400px;
   }
 `;
 
@@ -88,13 +105,20 @@ const Header = styled.div`
   flex-direction: column;
   width: min(470px, 100%);
 
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+  background-color: ${(props) => props.theme.colors.bg};
+
   h1 {
     color: ${(props) => props.theme.colors.red};
     text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
 
-    margin: 0 0 65px;
+    margin: 0 0 25px;
   }
 
   p {
@@ -104,23 +128,35 @@ const Header = styled.div`
     max-width: 550px;
     line-height: 1.5em;
 
-    margin-bottom: 65px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 410px) {
+    h1 {
+      margin: 0 0 65px;
+    }
   }
 
   @media ${(props) => props.theme.devices.tablet} {
+    /* width: 100vw;
+    left: calc(470px - 100vw); */
+
     p {
       font-size: 48px;
+      margin-bottom: 65px;
     }
-  } ;
+  }
 `;
 
 const CardSlider = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 370px;
   padding: 0;
 
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   @media ${(props) => props.theme.devices.tablet} {
     padding: 0 40px;
@@ -166,5 +202,5 @@ const Card = styled.div`
 
   @media ${(props) => props.theme.devices.tablet} {
     max-width: 400px;
-  } ;
+  }
 `;
