@@ -39,36 +39,56 @@ const Container = styled.section`
 `;
 
 const MainContent = styled.div`
-  display: grid;
-  grid-template-columns: 400px 550px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding-top: 60px;
-  align-items: flex-end;
+  padding-top: 270px;
+  align-items: center;
   justify-content: center;
+
+  @media ${(props) => props.theme.devices.desktop} {
+    display: grid;
+    grid-template-columns: 400px 550px;
+    padding-top: 60px;
+    align-items: flex-end;
+    grid-gap: 40px;
+  }
 `;
 
 const Note = styled.div`
   display: flex;
-  padding: 20px 40px;
+  padding: 20px 0 20px 40px;
   border-left: 10px solid ${(props) => props.theme.colors.red};
   border-radius: 5px;
   color: white;
-  width: 100%;
+  width: min(100%, 550px);
   margin-bottom: 70px;
+
+  @media ${(props) => props.theme.devices.desktop} {
+    width: 100%;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: min(100%, 550px);
   background-color: white;
   border-radius: 10px;
-  padding: 75px;
+  padding: 60px 30px;
 
   z-index: 100;
 
   & > button {
     align-self: flex-start;
+  }
+
+  @media ${(props) => props.theme.devices.desktop} {
+    width: 100%;
+  }
+
+  @media ${(props) => props.theme.devices.mobile} {
+    padding: 75px;
   }
 `;
 
