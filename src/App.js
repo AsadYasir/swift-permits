@@ -30,7 +30,11 @@ function App() {
         <ApplySection applyRef={applyRef} />
         <FAQSection faqRef={faqRef} />
         <PartnersSection />
-        <ContactSection />
+        <ContactSection
+          aboutRef={aboutRef}
+          applyRef={applyRef}
+          faqRef={faqRef}
+        />
 
         <Footer />
       </Layout>

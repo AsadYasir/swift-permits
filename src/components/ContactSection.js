@@ -6,7 +6,7 @@ import DetailLineImg from "../assets/images/detail-line.svg";
 import { Button } from "./Button";
 import Logo from "./Logo";
 
-function ContactSection() {
+function ContactSection({ aboutRef, applyRef, faqRef }) {
   return (
     <Container>
       <MainContent>
@@ -27,9 +27,27 @@ function ContactSection() {
       <Navigation>
         <Logo />
         <NavItems>
-          <NavItem>About</NavItem>
-          <NavItem>How To</NavItem>
-          <NavItem>FAQ</NavItem>
+          <NavItem
+            onClick={() => {
+              aboutRef.current.scrollIntoView();
+            }}
+          >
+            About
+          </NavItem>
+          <NavItem
+            onClick={() => {
+              applyRef.current.scrollIntoView();
+            }}
+          >
+            How To
+          </NavItem>
+          <NavItem
+            onClick={() => {
+              faqRef.current.scrollIntoView();
+            }}
+          >
+            FAQ
+          </NavItem>
         </NavItems>
       </Navigation>
 
@@ -163,6 +181,26 @@ const NavItem = styled.li`
   font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;
+
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: ${(props) => props.theme.colors.red};
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    bottom: -10px;
+  }
 `;
 
 const Background = styled.div`
