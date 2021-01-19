@@ -8,7 +8,10 @@ import Facebook from "../assets/images/facebook.svg";
 function Footer() {
   return (
     <Container>
-      <span>design by Slab Studios &#183; made by pklepa</span>
+      <span>
+        design by <a href="http://slabdsgn.com/">Slab Studios</a> &#183; made by{" "}
+        <a href="https://github.com/pklepa">pklepa</a>
+      </span>
 
       <div className="social-icons">
         <SocialIconWrapper>
@@ -40,6 +43,16 @@ const Container = styled.footer`
 
   span {
     font-weight: 300;
+
+    a {
+      text-decoration: none;
+      color: ${(props) => props.theme.colors.red};
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .social-icons {
@@ -72,7 +85,7 @@ const SocialIconWrapper = styled.div`
   transition: 0.3s;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
   }
 `;
 

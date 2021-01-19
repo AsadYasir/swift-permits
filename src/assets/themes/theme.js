@@ -3,6 +3,7 @@ const theme = {
     text: "#402B2B",
     bg: "#FEF8F5",
     red: "#EE4D47",
+    blue: "#0F264C",
     rose: "rgba(252,221,212,0.4)",
   },
 

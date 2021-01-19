@@ -12,6 +12,7 @@ import ApplySection from "./components/ApplySection";
 import FAQSection from "./components/FAQSection";
 import PartnersSection from "./components/PartnersSection";
 import Footer from "./components/Footer";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   const aboutRef = useRef(null);
@@ -29,6 +30,7 @@ function App() {
         <ApplySection applyRef={applyRef} />
         <FAQSection faqRef={faqRef} />
         <PartnersSection />
+        <ContactSection />
 
         <Footer />
       </Layout>
