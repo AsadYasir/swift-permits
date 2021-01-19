@@ -18,13 +18,19 @@ function App() {
   const aboutRef = useRef(null);
   const applyRef = useRef(null);
   const faqRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout>
-        <Navbar aboutRef={aboutRef} applyRef={applyRef} faqRef={faqRef} />
-        <HeroSection />
+        <Navbar
+          aboutRef={aboutRef}
+          applyRef={applyRef}
+          faqRef={faqRef}
+          contactRef={contactRef}
+        />
+        <HeroSection contactRef={contactRef} />
 
         <AboutSection aboutRef={aboutRef} />
         <ApplySection applyRef={applyRef} />
@@ -34,6 +40,7 @@ function App() {
           aboutRef={aboutRef}
           applyRef={applyRef}
           faqRef={faqRef}
+          contactRef={contactRef}
         />
 
         <Footer />

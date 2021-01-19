@@ -6,20 +6,25 @@ import DetailLineImg from "../assets/images/detail-line.svg";
 import { Button } from "./Button";
 import Logo from "./Logo";
 
-function ContactSection({ aboutRef, applyRef, faqRef }) {
+function ContactSection({ aboutRef, applyRef, faqRef, contactRef }) {
   return (
-    <Container>
+    <Container ref={contactRef}>
       <MainContent>
         <Note>
           We provide traffic management consultants so you get started quickly,
           contact us for a quote today!
         </Note>
-        <Form>
+        <Form onSubmit={(e) => e.preventDefault()}>
           <Label htmlFor="name">Name</Label>
-          <Input type="text" name="name" placeholder="Joe Doe" />
+          <Input type="text" name="name" placeholder="Joe Doe" required />
 
           <Label htmlFor="email">E-mail address</Label>
-          <Input type="email" name="email" placeholder="example@mail.com" />
+          <Input
+            type="email"
+            name="email"
+            placeholder="example@mail.com"
+            required
+          />
           <Button callToAction>Get Started</Button>
         </Form>
       </MainContent>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import { Button } from "./Button";
 
-function Navbar({ aboutRef, applyRef, faqRef }) {
+function Navbar({ aboutRef, applyRef, faqRef, contactRef }) {
   return (
     <Container>
       <Logo />
@@ -35,7 +35,13 @@ function Navbar({ aboutRef, applyRef, faqRef }) {
           FAQ
         </li>
         <li>
-          <Button>Contact Us</Button>
+          <Button
+            onClick={() => {
+              contactRef.current.scrollIntoView();
+            }}
+          >
+            Contact Us
+          </Button>
         </li>
       </NavLinks>
     </Container>

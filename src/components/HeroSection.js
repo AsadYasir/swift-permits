@@ -9,13 +9,20 @@ import DeliverGirlImg from "../assets/images/hero-deliver-girl.svg";
 import UpperTruckImg from "../assets/images/truck-upper.svg";
 import LowerTruckImg from "../assets/images/truck-lower.svg";
 
-function HeroSection() {
+function HeroSection({ contactRef }) {
   return (
     <Container>
       <SceneImg src={HeroImg} alt="" />
 
       <h1>Your awesome traffic permit consultant.</h1>
-      <Button callToAction>Get started</Button>
+      <Button
+        callToAction
+        onClick={() => {
+          contactRef.current.scrollIntoView();
+        }}
+      >
+        Get started
+      </Button>
 
       <AnimationsContainer>
         <DeliverGirl src={DeliverGirlImg} />
