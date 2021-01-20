@@ -4,9 +4,12 @@ import styled from "styled-components";
 import RightArrow from "../assets/images/SliderRight.svg";
 import LeftArrow from "../assets/images/SliderLeft.svg";
 
+import useWindowDimensions from "../assets/utils/useWindowDimensions.js";
+
 function PartnersSection() {
   const sliderRef = useRef(null);
   const [cardInDisplay, setCardInDisplay] = useState(0);
+  const { width } = useWindowDimensions();
 
   const cards = [
     {
@@ -46,6 +49,7 @@ function PartnersSection() {
               <Card
                 first={index === cardInDisplay}
                 second={Math.abs(index - cardInDisplay) < 2}
+                key={index}
               >
                 <p>{card.message}</p>
                 <div className="author">
@@ -70,7 +74,7 @@ function PartnersSection() {
             onClick={(e) => {
               if (cardInDisplay > 0) {
                 sliderRef.current.style.transform = `translate3d(${
-                  (cardInDisplay - 1) * -400
+                  (cardInDisplay - 1) * -Math.min(415, width - 30)
                 }px,0,0)`;
                 setCardInDisplay(cardInDisplay - 1);
               }
@@ -83,7 +87,7 @@ function PartnersSection() {
             onClick={(e) => {
               if (cardInDisplay >= 0 && cardInDisplay < cards.length - 1) {
                 sliderRef.current.style.transform = `translate3d(${
-                  (cardInDisplay + 1) * -400
+                  (cardInDisplay + 1) * -Math.min(415, width - 30)
                 }px,0,0)`;
                 setCardInDisplay(cardInDisplay + 1);
               }
@@ -205,7 +209,7 @@ const CardSlider = styled.div`
   left: 0;
 
   @media ${(props) => props.theme.devices.tablet} {
-    padding: 0 40px;
+    padding: 0 15px;
   }
 `;
 
@@ -221,7 +225,7 @@ const Card = styled.div`
 
   margin-right: 15px;
   padding: 60px 48px 40px;
-  max-width: min(400px, calc(100vw - 50px));
+  max-width: min(400px, calc(100vw - 45px));
 
   opacity: ${(props) => (props.first ? 1 : props.second ? 0.5 : 0.3)};
   transition: 0.4s;
@@ -258,7 +262,7 @@ const ControlsContainer = styled.div`
 
   position: absolute;
   bottom: -245px;
-  left: min(135px, calc((100vw - 30px - 65px) / 2));
+  left: min(135px, calc((100vw - 130px - 30px) / 2));
 
   img {
     width: 40px;
