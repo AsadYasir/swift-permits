@@ -36,6 +36,7 @@ function PartnersSection() {
           <h1>Partners</h1>
           <p>Our Awesome Clients</p>
         </Header>
+        <Hider />
       </Wrapper>
 
       <Wrapper>
@@ -118,6 +119,16 @@ const Wrapper = styled.div`
   width: min(100%, 470px);
 
   display: flex;
+  overflow: visible;
+
+  .support-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    background-color: red;
+
+    display: flex;
+  }
 
   @media ${(props) => props.theme.devices.tablet} {
     height: 400px;
@@ -129,6 +140,7 @@ const Header = styled.div`
   align-items: flex-start;
   flex-direction: column;
   width: min(470px, 100%);
+  height: 100%;
 
   position: absolute;
   top: 0;
@@ -168,6 +180,17 @@ const Header = styled.div`
       margin-bottom: 65px;
     }
   }
+`;
+
+const Hider = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  right: 0;
+  top: 0;
+
+  z-index: 9;
+  background-color: ${(props) => props.theme.colors.bg}; ;
 `;
 
 const CardSlider = styled.div`
