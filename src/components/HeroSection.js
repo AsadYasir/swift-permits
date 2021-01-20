@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 import { Button } from "./Button";
@@ -10,6 +10,29 @@ import UpperTruckImg from "../assets/images/truck-upper.svg";
 import LowerTruckImg from "../assets/images/truck-lower.svg";
 
 function HeroSection({ contactRef }) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const upperTruckRef = useRef(null);
+  const lowerTruckRef = useRef(null);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(scrollPosition);
+    upperTruckRef.current.style.transform = `translate3d(${scrollPosition}px, 0,0)`;
+    lowerTruckRef.current.style.transform = `translate3d(${scrollPosition}px, 0,0)`;
+  }, [scrollPosition]);
+
   return (
     <Container>
       <SceneImg src={HeroImg} alt="" />
@@ -28,8 +51,8 @@ function HeroSection({ contactRef }) {
         <DeliverGirl src={DeliverGirlImg} />
         <DeliverMan src={DeliverManImg} />
 
-        <DeliverTruckLower src={LowerTruckImg} />
-        <DeliverTruckUpper src={UpperTruckImg} />
+        <DeliverTruckLower ref={lowerTruckRef} src={LowerTruckImg} />
+        <DeliverTruckUpper ref={upperTruckRef} src={UpperTruckImg} />
       </AnimationsContainer>
     </Container>
   );
@@ -161,9 +184,10 @@ const motorBounce = (y) => keyframes`
 
 const DeliverTruckUpper = styled.img`
   position: absolute;
-  left: -60px;
+  left: -150px;
   width: 400px;
 
+  transition: transform 0.2s;
   animation: ${motorBounce(10)} 1s ease-out infinite;
 
   @media ${(props) => props.theme.devices.tablet} {
@@ -174,9 +198,10 @@ const DeliverTruckUpper = styled.img`
 
 const DeliverTruckLower = styled.img`
   position: absolute;
-  left: -73px;
+  left: -163px;
   top: calc(10vh + 100px);
   width: 400px;
+  transition: transform 0.2s;
 
   @media ${(props) => props.theme.devices.tablet} {
     left: -430px;
