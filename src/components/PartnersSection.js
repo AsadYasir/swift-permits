@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
+import RightArrow from "../assets/images/SliderRight.svg";
+import LeftArrow from "../assets/images/SliderLeft.svg";
+
 function PartnersSection() {
+  const sliderRef = useRef(null);
+  const [cardInDisplay, setCardInDisplay] = useState(0);
+
+  const cards = [
+    {
+      author: "Isak Petersson",
+      imgUrl: "https://randomuser.me/api/portraits/lego/0.jpg",
+      message:
+        "Yes, you will need to have the land owner sign the permit application as the Permittee, and you sign the permit as the Applicant or Agent for the Permittee.",
+    },
+    {
+      author: "Simon Sandberg",
+      imgUrl: "https://randomuser.me/api/portraits/lego/8.jpg",
+      message:
+        "From most barricade or traffic control companies located in the phone book. They employ certified Traffic Control Supervisors (TCS) who can generate and certify the traffic control plan.",
+    },
+    {
+      author: "Joe Doe",
+      imgUrl: "https://randomuser.me/api/portraits/lego/7.jpg",
+      message:
+        "An A-Line, or access restriction deed is a property right that has been obtained by CDOT for the sole purpose of prohibiting direct.",
+    },
+  ];
+
   return (
     <Container>
       <Wrapper>
@@ -12,58 +39,56 @@ function PartnersSection() {
       </Wrapper>
 
       <Wrapper>
-        <CardSlider>
-          <Card first>
-            <p>
-              Yes, you will need to have the land owner sign the permit
-              application as the Permittee, and you sign the permit as the
-              Applicant or Agent for the Permittee.
-            </p>
-            <div className="author">
-              <div
-                className="author-img"
-                style={{
-                  backgroundImage:
-                    "url(https://randomuser.me/api/portraits/lego/0.jpg)",
-                }}
-              ></div>
-              <span>Isak Petersson</span>
-            </div>
-          </Card>
-          <Card second>
-            <p>
-              From most barricade or traffic control companies located in the
-              phone book. They employ certified Traffic Control Supervisors
-              (TCS) who can generate and certify the traffic control plan.
-            </p>
-            <div className="author">
-              <div
-                className="author-img"
-                style={{
-                  backgroundImage:
-                    "url(https://randomuser.me/api/portraits/lego/5.jpg)",
-                }}
-              ></div>
-              <span>Simon Sandberg</span>
-            </div>
-          </Card>
-          <Card third>
-            <p>
-              An A-Line, or access restriction deed is a property right that has
-              been obtained by CDOT for the sole purpose of prohibiting direct
-            </p>
-            <div className="author">
-              <div
-                className="author-img"
-                style={{
-                  backgroundImage:
-                    "url(https://randomuser.me/api/portraits/lego/7.jpg)",
-                }}
-              ></div>
-              <span>Joe Doe</span>
-            </div>
-          </Card>
+        <CardSlider ref={sliderRef}>
+          {cards.map((card, index) => {
+            return (
+              <Card
+                first={index === cardInDisplay}
+                second={Math.abs(index - cardInDisplay) < 2}
+              >
+                <p>{card.message}</p>
+                <div className="author">
+                  <div
+                    className="author-img"
+                    style={{
+                      backgroundImage: `url(${card.imgUrl})`,
+                    }}
+                  ></div>
+                  <span>{card.author}</span>
+                </div>
+              </Card>
+            );
+          })}
         </CardSlider>
+
+        <ControlsContainer>
+          <img
+            src={LeftArrow}
+            alt="Left"
+            className={cardInDisplay <= 0 ? "disabled" : ""}
+            onClick={(e) => {
+              if (cardInDisplay > 0) {
+                sliderRef.current.style.transform = `translate3d(${
+                  (cardInDisplay - 1) * -400
+                }px,0,0)`;
+                setCardInDisplay(cardInDisplay - 1);
+              }
+            }}
+          />
+          <img
+            src={RightArrow}
+            alt="Right"
+            className={cardInDisplay >= cards.length - 1 ? "disabled" : ""}
+            onClick={(e) => {
+              if (cardInDisplay >= 0 && cardInDisplay < cards.length - 1) {
+                sliderRef.current.style.transform = `translate3d(${
+                  (cardInDisplay + 1) * -400
+                }px,0,0)`;
+                setCardInDisplay(cardInDisplay + 1);
+              }
+            }}
+          />
+        </ControlsContainer>
       </Wrapper>
     </Container>
   );
@@ -138,9 +163,6 @@ const Header = styled.div`
   }
 
   @media ${(props) => props.theme.devices.tablet} {
-    /* width: 100vw;
-    left: calc(470px - 100vw); */
-
     p {
       font-size: 48px;
       margin-bottom: 65px;
@@ -153,6 +175,7 @@ const CardSlider = styled.div`
   width: 100%;
   height: 370px;
   padding: 0;
+  transition: 0.4s;
 
   position: absolute;
   top: 0;
@@ -178,6 +201,7 @@ const Card = styled.div`
   max-width: min(400px, calc(100vw - 50px));
 
   opacity: ${(props) => (props.first ? 1 : props.second ? 0.5 : 0.3)};
+  transition: 0.4s;
 
   .author {
     display: flex;
@@ -202,5 +226,32 @@ const Card = styled.div`
 
   @media ${(props) => props.theme.devices.tablet} {
     max-width: 400px;
+  }
+`;
+
+const ControlsContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  bottom: -245px;
+  left: min(135px, calc((100vw - 30px - 65px) / 2));
+
+  img {
+    width: 40px;
+    cursor: pointer;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  & img:last-child {
+    margin-left: 50px;
+  }
+
+  @media ${(props) => props.theme.devices.tablet} {
+    bottom: -70px;
+    left: 175px;
   }
 `;
