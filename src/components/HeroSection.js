@@ -28,7 +28,6 @@ function HeroSection({ contactRef }) {
   }, []);
 
   useEffect(() => {
-    console.log(scrollPosition);
     upperTruckRef.current.style.transform = `translate3d(${scrollPosition}px, 0,0)`;
     lowerTruckRef.current.style.transform = `translate3d(${scrollPosition}px, 0,0)`;
   }, [scrollPosition]);
