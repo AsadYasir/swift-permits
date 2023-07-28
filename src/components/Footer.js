@@ -10,7 +10,7 @@ function Footer() {
     <Container>
       <span>
         design by <a href="http://slabdsgn.com/">Slab Studios</a> &#183; made by{" "}
-        <a href="https://github.com/pklepa">pklepa</a>
+        <a href="https://github.com/DigitalKnight0">DigitalKnight</a>
       </span>
 
       <div className="social-icons">

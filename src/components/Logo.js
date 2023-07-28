@@ -8,7 +8,7 @@ function Logo() {
     <LinkWrapper href="/">
       <Container>
         <LogoIcon />
-        <h1>Traffico</h1>
+        <h1>Swift Permits</h1>
       </Container>
     </LinkWrapper>
   );
