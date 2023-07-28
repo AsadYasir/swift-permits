@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/static/js/main.641842a5.js",
+    "static/media/MainScene.png": "/static/media/MainScene.ed6df23d0b126e996553.png",
+    "static/media/HowToApply.svg": "/static/media/HowToApply.427aea27c32d52db45f50cec30fddad7.svg",
+    "static/media/AboutUs.svg": "/static/media/AboutUs.90b65357c1f4c37431099d2e7cf3e117.svg",
+    "static/media/ThinkingMan.svg": "/static/media/ThinkingMan.9e7b5c5e1e1879106e3b500bf9ff8a6a.svg",
+    "static/media/hero-deliver-girl.svg": "/static/media/hero-deliver-girl.c9bdcabba02a5776daa9b34bf2be8344.svg",
+    "static/media/smaller-truck.svg": "/static/media/smaller-truck.f24d8c1e6972bf84615b4f610ad2deb0.svg",
+    "static/media/hero-deliver-man.svg": "/static/media/hero-deliver-man.ab9a13bafc5771cd9264b149d1a2640d.svg",
+    "static/media/truck-upper.svg": "/static/media/truck-upper.fd30a35a1d65567f7b62660cf6f2f4a9.svg",
+    "static/media/truck-lower.svg": "/static/media/truck-lower.db2a7b7abcc92468fc9ee45ba4a7e104.svg",
+    "static/media/instagram.svg": "/static/media/instagram.2e8bf9523e9637c4d05b22530fe51c20.svg",
+    "static/media/twitter.svg": "/static/media/twitter.3e335e9b8911bb01f326b6e7d3f21976.svg",
+    "index.html": "/index.html",
+    "static/media/detail-line.svg": "/static/media/detail-line.91a95f72546f78d0b483cdbe647213b4.svg",
+    "static/media/facebook.svg": "/static/media/facebook.c48b1cd34d4a80d6fa2ae6c20a03c9d2.svg",
+    "static/media/SliderLeft.svg": "/static/media/SliderLeft.cc9c2b21f86b5a1d26e546e7aa9240d9.svg",
+    "static/media/SliderRight.svg": "/static/media/SliderRight.f96cb5744e1ab782bd9fe6b2f45a36b5.svg",
+    "static/media/RightArrow.svg": "/static/media/RightArrow.eb81cb94807c4980a5a98661118bb3a0.svg",
+    "static/media/Logo.svg": "/static/media/Logo.e7dc650d676ab438e06887003bd28c81.svg",
+    "main.641842a5.js.map": "/static/js/main.641842a5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.641842a5.js"
+  ]
+}
