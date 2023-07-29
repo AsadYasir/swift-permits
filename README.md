@@ -1,10 +1,10 @@
-# traffico
+# Swift Permits
 
 ## Description
 
 Originally designed on Figma, this is a Landing page for a fictonal traffic permit consultant filled with SVG animations.
 
-> See it live on [https://pedroklepa.com/traffico-landing/](https://pedroklepa.com/traffico-landing/)
+
 
 ### Screenshots
 
